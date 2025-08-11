@@ -1,0 +1,52 @@
+{% extends 'layouts/base.html' %}
+
+{% block body %}
+
+    <section>
+        <div id="sign-up">
+            <article>
+                <h2>Some title</h2>
+                <p>Some description</p>
+            </article>
+            <article>
+                <h3>Crie a sua conta agora!</h3>
+                <form method="post" action="">
+                    <label for="username">Username</label>
+                    <input type="text" name="username" id="username" placeholder="Nome único para o seu usuário" required>
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="Senha" required>
+                    <label for="first_name">Nome</label>
+                    <input type="text" name="first_name" id="first_name" placeholder="Nome" required>
+                    <label for="last_name">Sobrenome</label>
+                    <input type="text" name="last_name" id="last_name" placeholder="Sobrenome" required>
+                    <label for="email">E-mail</label>
+                    <input type="email" name="email" id="email" placeholder="johndoe@mail.com" required>
+                    <label for="phone">Telefone para contato</label>
+                    <input type="text" name="phone" id="phone" placeholder="(00) 9 1234 - 5678" required>
+                    <input type="submit" value="Cadastrar">
+                </form>
+                <button>Já possuo uma conta.</button>
+            </article>
+        </div>
+
+        <div id="sign-in">
+            <article>
+                <h3>Crie a sua conta agora!</h3>
+                <form method="post" action="">
+                    <label for="username">Username ou senha</label>
+                    <input type="text" name="username" id="username" placeholder="username ou senha" required>
+                    <label for="password">Senha</label>
+                    <input type="password" name="password" id="password" placeholder="Senha" required>
+                    <input type="submit" value="Acessar">
+                </form>
+                <p>Ainda não possui uma conta?</p>
+                <button>Crie a sua aqui</button>
+            </article>
+            <article>
+                <h2>Some title</h2>
+                <p>Some description</p>
+            </article>
+        </div>
+    </section>
+
+{% endblock body %}

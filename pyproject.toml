@@ -1,0 +1,4 @@
+[tool.taskipy.tasks]
+lint = 'black . && isort .'
+dev = 'flask --app src/main.py run --debug'
+run = 'flask --app src/main.py run'
