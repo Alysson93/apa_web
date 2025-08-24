@@ -1,14 +1,15 @@
 {% extends 'layouts/base.html' %}
 
 {% block body %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/sign.css')}}">
 
-    <section>
-        <div id="sign-up">
-            <article>
+    <section id="sign">
+        <div id="sign-up" class="hidden sign">
+            <article class="right w50">
                 <h2>Some title</h2>
                 <p>Some description</p>
             </article>
-            <article>
+            <article class="right w50">
                 <h3>Crie a sua conta agora!</h3>
                 <form method="post" action="">
                     <label for="username">Username</label>
@@ -23,30 +24,33 @@
                     <input type="email" name="email" id="email" placeholder="johndoe@mail.com" required>
                     <label for="phone">Telefone para contato</label>
                     <input type="text" name="phone" id="phone" placeholder="(00) 9 1234 - 5678" required>
-                    <input type="submit" value="Cadastrar">
+                    <input type="submit" value="Cadastrar" name="sign-up">
                 </form>
-                <button>Já possuo uma conta.</button>
+                <button onclick="changeSign()">Já possuo uma conta.</button>
             </article>
+            <div class="clear"></div>
         </div>
 
-        <div id="sign-in">
-            <article>
-                <h3>Crie a sua conta agora!</h3>
-                <form method="post" action="">
-                    <label for="username">Username ou senha</label>
-                    <input type="text" name="username" id="username" placeholder="username ou senha" required>
-                    <label for="password">Senha</label>
-                    <input type="password" name="password" id="password" placeholder="Senha" required>
-                    <input type="submit" value="Acessar">
-                </form>
-                <p>Ainda não possui uma conta?</p>
-                <button>Crie a sua aqui</button>
-            </article>
-            <article>
+        <div id="sign-in" class="shown sign">
+            <article class="w50 left">
                 <h2>Some title</h2>
                 <p>Some description</p>
             </article>
+            <article class="w50 left">
+                <h3>Crie a sua conta agora!</h3>
+                <form method="post" action="">
+                    <label for="login-user">Username ou senha</label>
+                    <input type="text" name="username" id="login-user" placeholder="username ou senha" required>
+                    <label for="login-pass">Senha</label>
+                    <input type="password" name="password" id="login-pass" placeholder="Senha" required>
+                    <input type="submit" value="Acessar" name="sign-in">
+                </form>
+                <p>Ainda não possui uma conta?</p>
+                <button onclick="changeSign()">Crie a sua aqui</button>
+            </article>
+            <div class="clear"></div>
         </div>
     </section>
 
+<script src="{{url_for('static', filename='js/sign.js')}}"></script>
 {% endblock body %}
