@@ -14,7 +14,16 @@ def root():
     if request.method == "GET":
         return render_template("sign.html")
     if "sign-in" in request.form:
-        return "Logou"
+        data = {
+            "username": request.form.get("username"),
+            "password": request.form.get("password"),
+        }
+        response = post(f'{API_URL}', json=data)
+        if response.status_code == HTTPStatus.OK:
+            user = response.json()
+            return redirect(f'/home/{user['username']}')
+        flash(response.json()['detail'])
+        return redirect('/')
     data = {
         "username": request.form.get("username"),
         "password": request.form.get("password"),
